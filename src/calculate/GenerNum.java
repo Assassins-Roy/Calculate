@@ -7,10 +7,11 @@ import java.util.Scanner;
 
 public class GenerNum {
 
+    int max;
 
-    int max=10;
 
     public String FraNumber(){
+
         int a=(int)(1+Math.random()*(max-1));//系数
         int b=(int)(1+Math.random()*(max-1));//分子
         int c = (int)(b+1+Math.random()*(max-b));//分母
@@ -20,32 +21,46 @@ public class GenerNum {
     }
     //随机生成整数
     public String IntNumber(){
+
         Random random = new Random();
         int a = 1+random.nextInt(max - 2);
         String d = Integer.toString(a);
         return d;
     }
     //随机生成运算符号
-    public String symbol() {
+    public String symbol(int flag) {
         Random rand = new Random();
-        int a =rand.nextInt(4);
         String str = null;
-        if (a == 0)
-            str = " + ";
-        else if (a == 1)
-            str = " - ";
-        else if (a == 2)
-            str = " × ";
-        else if(a==3)
-            str = " ÷ ";
+
+        if(flag==1) {
+
+            int a = rand.nextInt(4);
+            if (a == 0)
+                str = " + ";
+            else if (a == 1)
+                str = " - ";
+            else if (a == 2)
+                str = " × ";
+            else if (a == 3)
+                str = " ÷ ";
+        } else{
+            int a = rand.nextInt(2);
+
+            if (a == 0)
+                str = " + ";
+            else if (a == 1)
+                str = " - ";
+        }
         return str;
     }
+
     public String formula(){
+        boolean flag=true;
         String str = "";
         String str1="";
         int t;
         Random rand = new Random();
-        t = rand.nextInt(2) + 2;
+        t = rand.nextInt(3) + 2;
         String[] number = new String[t];//存放数字
         String[] symbol = new String[t-1];//存放运算符号
         String[] total = new String[4*t-3];//存放式子
@@ -60,7 +75,12 @@ public class GenerNum {
         }
 
         for(int i = 0;i < t-1;i++) {
-            symbol[i] = symbol();
+            symbol[i] = symbol(1);
+                if(i>0) {
+                    if (symbol[i - 1] == (" + ") | symbol[i - 1] == (" - ")) {
+                        symbol[i] = symbol(2);
+                    }
+                }
         }
 
       for(int i = 0,j=0;j<t;j++) {
