@@ -4,16 +4,21 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.util.Scanner;
 
 public class Check {
     public static void check() throws Exception {
 
       /*  FileWriter fw = new FileWriter("D:/cal/Grade.txt");
         BufferedWriter bw = new BufferedWriter(fw);*/
-
-        FileReader fr1 = new FileReader("D:/test/Exercises.txt");
+   /*     Scanner sc = new Scanner(System.in);
+        String n = sc.next();
+        System.out.println("请输入题目存放的路径");*/
+        FileReader fr1 = new FileReader("Exercises.txt");
         BufferedReader br1 = new BufferedReader(fr1);
-        FileReader fr2 = new FileReader("D:/test/Answers.txt");
+     /*   System.out.println("请输入答案存放的路径");
+        String r = sc.next();*/
+        FileReader fr2 = new FileReader("Answers.txt");
         BufferedReader br2 = new BufferedReader(fr2);
         int correct=0;
         int wrong=0;

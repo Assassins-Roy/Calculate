@@ -9,12 +9,11 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
 
-        FileWriter fw1 = new FileWriter("D:/test/Exercises.txt");
+        FileWriter fw1 = new FileWriter("Exercises.txt");
         BufferedWriter bw1 = new BufferedWriter(fw1);
-        FileWriter fw2 = new FileWriter("D:/test/Answers.txt");
+        FileWriter fw2 = new FileWriter("Answers.txt");
         BufferedWriter bw2 = new BufferedWriter(fw2);
         Scanner sc = new Scanner(System.in);
-        Scanner scc = new Scanner(System.in);
         Scanner sccc = new Scanner(System.in);
         System.out.println("请输入题目个数");
         String n = sc.next();
