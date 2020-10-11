@@ -22,8 +22,8 @@ public class Check {
         BufferedReader br2 = new BufferedReader(fr2);
         int correct=0;
         int wrong=0;
-        String s1[]=new String[20];
-        String s2[]=new String[20];
+        String s1[]=new String[20000];
+        String s2[]=new String[20000];
         String line=null;
         String right="Correct (";
         String mistake="Wrong (";
